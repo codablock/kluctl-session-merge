@@ -12,4 +12,4 @@ podtato:
   image_name: {{ args.image_name }}
   tag: {{ args.image_version }}
 
-base_dns: localhost.tv
+base_dns: {{ args.cluster_name}}.localhost.tv

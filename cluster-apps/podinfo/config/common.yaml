@@ -3,4 +3,4 @@ podinfo:
   color: blue
   replicas: 2
 
-base_dns: localhost.tv
+base_dns: {{ args.cluster_name}}.localhost.tv

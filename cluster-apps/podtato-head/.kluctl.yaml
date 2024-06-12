@@ -1,14 +1,17 @@
 targets:
   - name: test
     args:
+      cluster_name: demo-1
       env_type: non-prod
     context: kind-demo-1
   - name: prod
     args:
+      cluster_name: demo-1
       env_type: prod
     context: kind-demo-2
 
 args:
+  - name: cluster_name
   - name: image_name
     default: ghcr.io/podtato-head/podtato-server
   - name: image_version

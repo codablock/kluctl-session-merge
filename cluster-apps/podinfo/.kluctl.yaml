@@ -2,6 +2,7 @@
 discriminator: "podinfo-{{ args.env_name }}"
 
 args:
+  - name: cluster_name
   - name: env_name
   - name: env_type
   - name: color_override

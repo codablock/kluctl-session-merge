@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: kluctl-webui.localhost.tv
+    - host: kluctl-webui.{{ args.cluster_name}}.localhost.tv
       http:
         paths:
           - path: /
