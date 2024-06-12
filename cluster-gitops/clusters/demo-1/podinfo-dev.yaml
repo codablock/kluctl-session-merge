@@ -13,6 +13,7 @@ spec:
   args:
     env_type: non-prod
     env_name: dev
+    color_override: orange
 
   context: default
 
