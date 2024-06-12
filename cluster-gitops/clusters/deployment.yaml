@@ -1,0 +1,3 @@
+deployments:
+  - path: all
+  - path: {{ args.cluster_name }}

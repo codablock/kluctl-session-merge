@@ -1,0 +1,4 @@
+discriminator: cluster-gitops
+
+args:
+  - name: cluster_name
