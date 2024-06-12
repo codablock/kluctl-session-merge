@@ -1,0 +1,17 @@
+deployments:
+  - git:
+      url: https://github.com/kluctl/kluctl.git
+      subDir: install/controller
+      ref:
+        tag: v2.24.1
+  - barrier: true
+  - path: webui-secret
+  - barrier: true
+  - git:
+      url: https://github.com/kluctl/kluctl.git
+      subDir: install/webui
+      ref:
+        tag: v2.24.1
+  - barrier: true
+  - path: ingress
+  - path: template-controller

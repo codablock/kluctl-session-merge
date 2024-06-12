@@ -1,0 +1,13 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  name: "template-controller"
+  namespace: kluctl-system
+spec:
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/instance: template-controller
+      app.kubernetes.io/name: template-controller
+  egress:
+    - toEntities:
+        - all

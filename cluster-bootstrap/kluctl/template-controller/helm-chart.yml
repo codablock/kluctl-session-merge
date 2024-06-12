@@ -1,0 +1,7 @@
+helmChart:
+  repo: https://kluctl.github.io/charts
+  chartName: template-controller
+  chartVersion: 0.2.5
+  releaseName: template-controller
+  namespace: kluctl-system
+  skipPrePull: true

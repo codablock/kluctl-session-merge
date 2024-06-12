@@ -1,0 +1,24 @@
+deployments:
+  - path: cilium
+  - barrier: true
+  - waitReadinessObjects:
+      - kind: Deployment
+        namespace: kube-system
+        name: cilium-operator
+  - path: namespaces
+  - barrier: true
+  - path: cert-manager
+  - path: ingress-nginx
+  # wait for ingress controller to be able to serve webhooks
+  - waitReadinessObjects:
+      - kind: Deployment
+        namespace: ingress-nginx
+        name: ingress-nginx-controller
+  - barrier: true
+  - include: kluctl
+
+ignoreForDiff:
+  - kind: Job
+    fieldPath: spec.template.metadata.labels["batch.kubernetes.io/controller-uid"]
+  - kind: Job
+    fieldPath: spec.selector.matchLabels["batch.kubernetes.io/controller-uid"]

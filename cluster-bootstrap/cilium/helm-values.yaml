@@ -1,0 +1,24 @@
+image:
+  useDigest: false
+
+kubeProxyReplacement: strict
+nodePort:
+  enabled: true
+
+operator:
+  image:
+    useDigest: false
+
+hubble:
+  image:
+    useDigest: false
+  tls:
+    auto:
+      method: cronJob
+
+certgen:
+  image:
+    useDigest: false
+
+k8sServiceHost: kind-control-plane
+k8sServicePort: 6443

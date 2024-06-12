@@ -1,0 +1,23 @@
+
+controller:
+  image:
+    digest: ""
+    digestChroot: ""
+
+  #hostNetwork: true
+  hostPort:
+    enabled: true
+    #ports:
+    #  http: 80
+    #  https: 4443
+  #service:
+  #  type: ClusterIP
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate
+  nodeSelector:
+    ingress-ready: "true"
+  tolerations:
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
