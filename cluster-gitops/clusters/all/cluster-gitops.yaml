@@ -10,6 +10,9 @@ spec:
     url: https://github.com/codablock/kluctl-session-merge.git
     path: "cluster-gitops"
 
+  args:
+    cluster_name: {{ args.cluster_name }}
+
   context: default
 
   prune: true
