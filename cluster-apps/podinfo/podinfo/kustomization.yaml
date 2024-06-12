@@ -1,0 +1,3 @@
+resources:
+  - namespace.yaml
+  - helm-rendered.yaml

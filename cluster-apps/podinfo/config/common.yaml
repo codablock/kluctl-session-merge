@@ -1,0 +1,6 @@
+
+podinfo:
+  color: blue
+  replicas: 2
+
+base_dns: localhost.tv

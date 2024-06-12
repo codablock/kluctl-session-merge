@@ -1,0 +1,4 @@
+replicaCount: {{ podinfo.replicas }}
+
+ui:
+  color: {{ podinfo.color }}

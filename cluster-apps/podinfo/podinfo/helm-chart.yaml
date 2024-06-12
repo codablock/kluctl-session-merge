@@ -1,0 +1,7 @@
+helmChart:
+  repo: https://stefanprodan.github.io/podinfo
+  chartName: podinfo
+  chartVersion: 6.6.3
+  releaseName: "{{ args.env_name }}-podinfo"
+  namespace: "{{ args.env_name }}-podinfo"
+  skipPrePull: true
