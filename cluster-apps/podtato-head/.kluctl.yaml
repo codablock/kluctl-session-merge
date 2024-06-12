@@ -2,9 +2,11 @@ targets:
   - name: test
     args:
       env_type: non-prod
+    context: kind-demo-1
   - name: prod
     args:
       env_type: prod
+    context: kind-demo-2
 
 args:
   - name: image_name
