@@ -21,11 +21,13 @@ fi
 
 export K8S_PORT=$((6443 + offset * 1000))
 export HTTP_PORT=$((8080 + offset * 1000))
+echo K8S_PORT=$K8S_PORT
+echo HTTP_PORT=$HTTP_PORT
 
 cat kind-config.yaml | envsubst > /tmp/kind-config.yaml
 
 kind delete cluster --name $CLUSTER_NAME
-kind create cluster --name $CLUSTER_NAME --config /tmp/kind-config.yaml
+kind create cluster --name $CLUSTER_NAME --config /tmp/kind-config.yaml --retain
 
 images="\
   quay.io/cilium/cilium:v1.15.3 \
@@ -45,3 +47,9 @@ for i in $images; do
   docker pull $i
   kind load docker-image --name $CLUSTER_NAME $i
 done
+
+cd cluster-bootstrap
+kluctl deploy -a cluster_name=$CLUSTER_NAME --context=kind-$CLUSTER_NAME --yes
+
+cd ../cluster-gitops
+kluctl deploy -a cluster_name=$CLUSTER_NAME --context=kind-$CLUSTER_NAME --yes
