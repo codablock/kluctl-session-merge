@@ -1,0 +1,15 @@
+targets:
+  - name: test
+    args:
+      env_type: non-prod
+  - name: prod
+    args:
+      env_type: prod
+
+args:
+  - name: image_name
+    default: ghcr.io/podtato-head/podtato-server
+  - name: image_version
+    default: "v0.3.1"
+
+discriminator: "podtato-head-{{ target.name }}"
