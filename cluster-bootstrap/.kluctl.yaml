@@ -1,1 +1,5 @@
 discriminator: cluster-bootstrap
+
+args:
+  - name: cluster_name
+    default: demo-1

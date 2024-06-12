@@ -20,5 +20,5 @@ certgen:
   image:
     useDigest: false
 
-k8sServiceHost: kind-control-plane
+k8sServiceHost: {{ args.cluster_name }}-control-plane
 k8sServicePort: 6443
