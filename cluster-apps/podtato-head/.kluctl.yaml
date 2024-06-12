@@ -6,7 +6,7 @@ targets:
     context: kind-demo-1
   - name: prod
     args:
-      cluster_name: demo-1
+      cluster_name: demo-2
       env_type: prod
     context: kind-demo-2
 
