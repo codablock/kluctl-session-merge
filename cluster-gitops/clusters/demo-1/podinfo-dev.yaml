@@ -11,6 +11,7 @@ spec:
     path: "cluster-apps/podinfo"
 
   args:
+    cluster_name: {{ args.cluster_name }}
     env_type: non-prod
     env_name: dev
     color_override: orange
