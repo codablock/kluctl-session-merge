@@ -21,3 +21,8 @@ controller:
   tolerations:
     - key: "node-role.kubernetes.io/control-plane"
       operator: "Exists"
+
+  admissionWebhooks:
+    patch:
+      image:
+        digest: ""
