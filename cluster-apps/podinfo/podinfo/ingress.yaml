@@ -2,8 +2,9 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: podtato
+  namespace: {{ args.env_name }}-podinfo
   annotations:
-    validate-result.kluctl.io/podinfo: "http://{{ args.env_name }}-podtato.{{ base_dns }}"
+    validate-result.kluctl.io/podinfo: "http://{{ args.env_name }}-podinfo.{{ base_dns }}"
 spec:
   ingressClassName: nginx
   rules:
@@ -14,6 +15,6 @@ spec:
               pathType: Prefix
               backend:
                 service:
-                  name: podtato-head-frontend
+                  name: {{ args.env_name }}-podinfo
                   port:
-                    number: 9000
+                    number: 9898
